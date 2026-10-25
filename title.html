@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will's Photography</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 48px 32px 64px;
+            background: #070707;
+            color: #ffffff;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 16px;
+            text-align: center;
+            font-weight: 400;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .gallery {
+            display: grid;
+            gap: 56px;
+            margin: 0 auto;
+            max-width: 1200px;
+        }
+
+        .gallery-row {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(160px, 0.4fr) minmax(0, 1fr);
+            align-items: center;
+            gap: 32px;
+            padding-bottom: 56px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .gallery-row:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .photo {
+            margin: 0;
+            min-width: 0;
+        }
+
+        .photo .frame {
+            overflow: hidden;
+            border-radius: 4px;
+            box-shadow: 0 6px 24px rgba(0, 0, 0, 0.6);
+            transition: transform 0.35s ease, box-shadow 0.35s ease;
+        }
+
+        .photo img {
+            display: block;
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            object-fit: cover;
+            transition: transform 0.6s ease, filter 0.35s ease;
+            filter: brightness(0.92);
+        }
+
+        .photo:hover .frame,
+        .photo:focus-within .frame {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 36px rgba(121, 121, 121, 0.4);
+        }
+
+        .photo:hover img,
+        .photo:focus-within img {
+            transform: scale(1.05);
+            filter: brightness(1);
+        }
+
+        .photo figcaption {
+            padding-top: 12px;
+            font-size: 13px;
+            line-height: 1.6;
+            letter-spacing: 0.04em;
+            color: rgba(255, 255, 255, 0.55);
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .photo:hover figcaption,
+        .photo:focus-within figcaption {
+            color: #ffffff;
+            transform: translateY(-2px);
+        }
+
+        .photo-details {
+            display: block;
+            padding: 2px 10px;
+            overflow-wrap: anywhere;
+        }
+
+        .photo-details + .photo-details {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        .row-text {
+            margin: 0;
+            text-align: center;
+            overflow-wrap: anywhere;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 22px;
+            font-weight: 400;
+            line-height: 1.5;
+            color: rgba(255, 255, 255, 0.85);
+            transition: color 0.3s ease, letter-spacing 0.4s ease;
+        }
+
+        .gallery-row:hover .row-text {
+            color: #ffffff;
+            letter-spacing: 0.02em;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                transition: none !important;
+            }
+        }
+
+        @media (max-width: 700px) {
+            body {
+                padding: 28px 20px 48px;
+            }
+
+            .gallery {
+                gap: 40px;
+            }
+
+            .gallery-row {
+                grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+                gap: 16px;
+                padding-bottom: 40px;
+            }
+
+            .row-text {
+                grid-column: 1 / -1;
+                grid-row: 2;
+                font-size: 19px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="gallery">
+        <section class="gallery-row" aria-label="Photo row 1">
+            <figure class="photo">
+                <div class="frame"><img src="Tri1B.jpg" alt="Original photograph of two poles and a sign" loading="lazy"></div>
+                <figcaption>
+                    <span class="photo-details">Canon EOS 1500D · 18mm · f/5.6 · 1/500 · ISO 1600</span>
+                    <span class="photo-details">9:22 AM, Sep 25 2026</span>
+                </figcaption>
+            </figure>
+            <p class="row-text">In this one when I looked at it my eyes drifted from the two poles at the bottom to the sign and I thought that it would make a nice implied triangle.</p>
+            <figure class="photo">
+                <div class="frame"><img src="Tri1A.png" alt="The same photograph with the implied triangle drawn in" loading="lazy"></div>
+                <figcaption>
+                    <span class="photo-details">Canon EOS 1500D · 18mm · f/5.6 · 1/500 · ISO 1600</span>
+                    <span class="photo-details">9:22 AM, Sep 25 2026</span>
+                </figcaption>
+            </figure>
+        </section>
+
+        <section class="gallery-row" aria-label="Photo row 2">
+            <figure class="photo">
+                <div class="frame"><img src="Tri2B.jpg" alt="Original photograph of a hallway" loading="lazy"></div>
+                <figcaption>
+                    <span class="photo-details">Canon EOS 1500D · 18mm · f/5.6 · 1/500 · ISO 1600</span>
+                    <span class="photo-details">9:21 AM, Sep 25 2026</span>
+                </figcaption>
+            </figure>
+            <p class="row-text">In this one I saw the way the hallway floor and ceiling disappeared and decided to turn that into two implied triangles.</p>
+            <figure class="photo">
+                <div class="frame"><img src="Tri2A.png" alt="The same hallway with two implied triangles drawn in" loading="lazy"></div>
+                <figcaption>
+                    <span class="photo-details">Canon EOS 1500D · 18mm · f/5.6 · 1/500 · ISO 1600</span>
+                    <span class="photo-details">9:21 AM, Sep 25 2026</span>
+                </figcaption>
+            </figure>
+        </section>
+
+        <section class="gallery-row" aria-label="Photo row 3">
+            <figure class="photo">
+                <div class="frame"><img src="Tri3B.jpg" alt="Original photograph of the letter A and the number 4" loading="lazy"></div>
+                <figcaption>
+                    <span class="photo-details">Canon EOS 1500D · 40mm · f/5.6 · 1/500 · ISO 400</span>
+                    <span class="photo-details">9:24 AM, Sep 25 2026</span>
+                </figcaption>
+            </figure>
+            <p class="row-text">In this one I saw the A and the 4 and saw how they both made physical triangles perfectly and I decided to make them into said triangles.</p>
+            <figure class="photo">
+                <div class="frame"><img src="Tri3A.png" alt="The same photograph with triangles traced over the A and the 4" loading="lazy"></div>
+                <figcaption>
+                    <span class="photo-details">Canon EOS 1500D · 40mm · f/5.6 · 1/500 · ISO 400</span>
+                    <span class="photo-details">9:24 AM, Sep 25 2026</span>
+                </figcaption>
+            </figure>
+        </section>
+    </main>
+</body>
+</html>
