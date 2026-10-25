@@ -12,6 +12,9 @@
         }
 
         body {
+            --sb-track-color: #303033;
+            --sb-thumb-color: #9a9a9a;
+            --sb-size: 13px;
             margin: 0;
             padding: 48px 32px 64px;
             background: #303033;
@@ -21,6 +24,21 @@
             text-align: center;
             font-weight: 400;
             -webkit-font-smoothing: antialiased;
+        }
+
+        
+        body::-webkit-scrollbar {
+            width: var(--sb-size);
+        }
+
+        body::-webkit-scrollbar-track {
+            background: var(--sb-track-color);
+            border-radius: 4px;
+        }
+
+        body::-webkit-scrollbar-thumb {
+            background: var(--sb-thumb-color);
+            border-radius: 4px;
         }
 
         .gallery {
